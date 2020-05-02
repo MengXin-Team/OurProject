@@ -2,7 +2,10 @@
   <div>
     <header>
       <div id="we">
-        <h2>萌新小队</h2>
+        <h2>
+          <img src="../../assets/img/4.png" alt="" style="height: 5%;width:5%">
+          萌新小队
+        </h2>
       </div>
       <nav>
         <router-link
@@ -40,8 +43,8 @@ export default {
           url: '/hotSearch'
         },
         {
-          name: '实时播报',
-          url: '/realTimeBroadcast',
+          name: '疫情趋势',
+          url: '/epidemicTrend',
           id: 3,
         },
         {
@@ -86,6 +89,5 @@ nav{
   color: #fff;
   float: left;
   margin-left: 50px;
-
 }
 </style>
