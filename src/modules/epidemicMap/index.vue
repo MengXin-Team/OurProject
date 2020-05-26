@@ -1,18 +1,16 @@
 <template>
   <div>
-    <div class='dataCenter'>
+    <!-- <div class='dataCenter'> -->
       <div class='dataOne'>
         <router-link to='/chinaMap' tag='div' class='china'>国内疫情</router-link>
       </div>
       <div class='dataTwo'>
-        <div>
           <router-link to='/worldMap' tag='div' class='world'>世界疫情</router-link>
-        </div>
       </div>
       <div class="dataThree">
           <router-link to='/fuJianMap' tag='div' class='fj'>福建疫情</router-link>
       </div>
-    </div>
+    <!-- </div> -->
     <router-view></router-view>
 
   </div>
@@ -24,82 +22,60 @@
 <style scoped>
 
   /* 导航栏 */
-  .dataCenter{
-  background-color: #01050a;
-  height: 4.5rem;
-  line-height: 5rem;
-  font-size: 1rem;
-  font-weight: bolder;
-}
-.dataOne {
+
+/* .dataOne {
   height: 3.5rem;
-  width:33.3%;
+  width:33.33333333%;
   float: left;
-}
-.dataOne div{
-  background-color: #002d72;
-  color: #fff;
-  height:3.5rem;
-  margin:0.5rem;
-  text-align: center;
-  line-height: 3.5rem;
-}
-.dataCenter .dataOne div:hover{
-  background-color:dodgerblue;
 }
 .dataTwo {
   height: 3.5rem;
-  width:33.3%;
+  width:33.33333333%;
   float: left;
-}
-.dataTwo div{
-  background-color: #002d72;
-  color: #fff;
-  height:3.5rem;
-  margin:0.5rem;
-  text-align: center;
-  line-height: 3.5rem;
-}
-.dataCenter .dataTwo div:hover{
-  background-color:dodgerblue;
 }
 .dataThree {
   height: 3.5rem;
-  width:33.3%;
+  width:33.33333333%;
   float: left;
-}
+} */
 .china{
-  background-color: #002d72;
+  width:33.33333333%;
+  float: left;
+  background-color: #2c003e;
   color: #fff;
-  height:3.5rem;
-  margin:0.5rem;
+  height:58px;
+  /* margin:0.5rem; */
   text-align: center;
   line-height: 3.5rem;
 }
 .china:hover{
-  background-color:dodgerblue;
+  background-color:#6983aa;
 }
 .fj{
-  background-color: #002d72;
+  width:33.33333333%;
+  float: left;
+  background-color: #2c003e;
   color: #fff;
-  height:3.5rem;
-  margin:0.5rem;
+  height:58px;
+  /* margin:0.5rem; */
   text-align: center;
   line-height: 3.5rem;
 }
 .fj:hover{
-  background-color:dodgerblue;
+  background-color:#6983aa;
 }
 .world{
-  background-color: #002d72;
+  width:33.33333333%;
+  float: left;
+  background-color: #2c003e;
   color: #fff;
-  height:3.5rem;
-  margin:0.5rem;
+  height:58px;
+  /* margin:0.5rem; */
   text-align: center;
   line-height: 3.5rem;
 }
 .world:hover{
-  background-color:dodgerblue;
+  background-color:#6983aa;
 }
 
 </style>

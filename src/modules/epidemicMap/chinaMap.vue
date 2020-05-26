@@ -99,7 +99,6 @@ const option = {
           symbol:'rect',
           color:['#ffc0b1','#9c0505']
         }
-        // color: ['#E0022B', '#E09107', '#A3E00B']
       },
   
     data:[],//用来展示后台给的数据

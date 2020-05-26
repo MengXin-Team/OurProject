@@ -22,7 +22,7 @@ const option = {
     trigger: 'axis'
   },
   legend: {
-    data: ['国内确诊总人数', '国内疑似总人数', '国内治愈总人数', '国内死亡总人数', '武汉确诊总人数', '武汉死亡总人数', '武汉治愈总人数']
+    data: ['国内新增确诊人数', '国内疑似总人数', '国内新增境外输入人数']
   },
   grid: {
     left: '3%',
@@ -45,60 +45,34 @@ const option = {
   },
   series: [
     {
-      name: '国内确诊总人数',
+      name: '国内新增确诊人数',
       type: 'line',
       smooth: true,
-      stack: '国内确诊总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
+      stack: '国内新增确诊人数',
       data: []
     },
     {
       name: '国内疑似总人数',
       type: 'line',
-      smooth: true,
+      smooth: true, 
       stack: '国内疑似总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
       data: []
     },
     {
-      name: '国内治愈总人数',
+      name: '国内无症状感染者人数',
       type: 'line',
       smooth: true,
-      stack: '国内治愈总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
+      stack: '国内无症状感染者人数',
       data: []
     },
     {
-      name: '国内死亡总人数',
-      type: 'line',
+      name: '国内新增境外输入人数',
+      type: 'bar',
       smooth: true,
-      stack: '国内死亡总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
-      data: []
-    },
-    {
-      name: '武汉确诊总人数',
-      type: 'line',
-      smooth: true,
-      stack: '武汉确诊总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
-      data: []
-    },
-     {
-      name: '武汉死亡总人数',
-      type: 'line',
-      smooth: true,
-      stack: '武汉死亡总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
-      data: []
-    }, {
-      name: '武汉治愈总人数',
-      type: 'line',
-      smooth: true,
-      stack: '武汉治愈总人数',
-      // `````data: [520, 132, 101, 134, 90, 230, 210],`````
+      stack: '国内新增境外输入人数',
       data: []
     }
+    
 
   ]
 };
@@ -106,9 +80,6 @@ const option = {
 export default {
   mounted () {
     this.getMsg();
-    // this.$http.get('http://www.baidu.com', (res)=>{
-    //   console.log(res.data)
-    // })
     this.mycharts = echarts.init(document.getElementById('chart1'));
   },
   data () {
@@ -127,13 +98,11 @@ export default {
             return {
               name: item.date,
               // 确诊总数
-              cn_conNum: item.cn_conNum,
+              cn_conadd: item.cn_conadd,
               cn_susNum: item.cn_susNum,
-              cn_cureNum: item.cn_cureNum,
-              cn_deathNum: item.cn_deathNum,
-              wuhan_conNum: item.wuhan_conNum,
-              wuhan_deathNum: item.wuhan_deathNum,
-              wuhan_cureNum: item.wuhan_cureNum
+             
+              cn_addjwsrNum: item.cn_addjwsrNum,
+              
             };
           })
           // console.log(list1);
@@ -141,7 +110,7 @@ export default {
           // 国内确诊总人数
           option.series[0].data = list1.slice(0, 30).reverse().map(item => {
             return {
-              value: item.cn_conNum
+              value: item.cn_conadd
             }
           })
            // 国内疑似总人数
@@ -151,34 +120,13 @@ export default {
             }
           })
           // 国内治愈总人数
-          option.series[2].data = list1.slice(0, 30).reverse().map(item => {
-            return {
-              value: item.cn_cureNum
-            }
-          })
+         
           option.series[3].data = list1.slice(0, 30).reverse().map(item => {
             return {
-              value: item.cn_deathNum
+              value: item.cn_addjwsrNum
             }
           })
-          // 武汉确诊总人数
-          option.series[4].data = list1.slice(0, 30).reverse().map(item => {
-            return {
-              value: item.wuhan_conNum
-            }
-          })
-          // 武汉死亡总人数
-          option.series[5].data = list1.slice(0, 30).reverse().map(item => {
-            return {
-              value: item.wuhan_deathNum
-            }
-          })
-          // 武汉治愈总人数
-          option.series[6].data = list1.slice(0, 30).reverse().map(item => {
-            return {
-              value: item.wuhan_cureNum
-            }
-          })
+         
           // 横坐标
           option.xAxis.data = list1.slice(0, 30).reverse().map(item => {
             return {

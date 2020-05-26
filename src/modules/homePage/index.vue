@@ -13,14 +13,15 @@
     name:'zmd',
     data(){
       return {
-        imagebox:[{id:0,idView:require('../../assets/img/1.jpg')},
-        {id:1,idView:require('../../assets/img/2.jpg')},
-        {id:2,idView:require('../../assets/img/3.png')}
+        imagebox:[
+          {id:0, idView:require('@/assets/img/1.jpg')}, 
+          {id:1, idView:require('@/assets/img/2.jpg')}, 
+          {id:2, idView:require('@/assets/img/3.png')}
         ],
          // 图片父容器高度
-        zmdHeight :700,
+        zmdHeight: 700,
         // 浏览器宽度
-        screenWidth :0
+        screenWidth: 0
       }
     },
      methods:{
@@ -41,7 +42,7 @@
           }
   }
 </script>
-<style>
+<style scoped>
     #homePage{
         margin-top:50px;
     }

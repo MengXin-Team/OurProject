@@ -2,10 +2,7 @@
   <div>
     <header>
       <div id="we">
-        <h2>
-          <img src="../../assets/img/4.png" alt="" style="height: 5%;width:5%">
-          萌新小队
-        </h2>
+        <h2>MXteam</h2>
       </div>
       <nav>
         <router-link
@@ -17,8 +14,6 @@
     </header>
     
     <router-view class="main"></router-view>
-
-    
   </div>
 </template>
 <script>
@@ -35,7 +30,7 @@ export default {
         {
           name: '疫情分布',
           id: 1,
-          url: '/epidemicMap'
+          url: '/chinaMap'
         },
         {
           name: '全民热搜',
@@ -44,13 +39,18 @@ export default {
         },
         {
           name: '疫情趋势',
-          url: '/epidemicTrend',
+          url: '/chinaTrend',
           id: 3,
         },
         {
           name: '疾病知识',
           url: '/diseaseKnowledge',
           id: 4,
+        },
+        {
+          name:'实时播报',
+          url:'/realTimeBroadcast',
+          id:5
         }
       ]
     }
@@ -59,35 +59,40 @@ export default {
 </script>
 <style scoped>
 header{
-  background-color: #002d72;
+  background-color: #4d4c7d;
   height: 6rem;
   line-height: 6rem;
 }
 nav{
   display: flex;
   justify-content: flex-end;
-  margin-right: 30px;
+  /* margin-right: 30px; */
   font-size: 1rem;
   font-weight: bolder;
   height: 1rem;
-  margin-right: 10rem;
 }
 .item{
-  color: #fff;
+  color: #EEEEEE;
   margin: 0 20px;
   text-decoration-line: none;
   transition: 0.3s;
+  font-weight: 545;
+  font-size: 1.1em;
 }
 .item:hover{
-  color: #f1c400
+  color: #b1bdf5
 }
 .main{
   background-color:#fff;
-  height: 100vh;
 }
 #we{
   color: #fff;
   float: left;
   margin-left: 50px;
+  font-style: italic;
+  font-size: 1.7em;
+  font-family: Raleway,'Times New Roman',serif;
+
 }
 </style>
+

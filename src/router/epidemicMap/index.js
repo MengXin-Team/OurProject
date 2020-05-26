@@ -7,7 +7,7 @@ const epidemicMapRoutes =
   {
     path: '/epidemicMap',
     component: Main,
-    redirect: {name: 'epidemicMap'},
+    // redirect: {name: 'epidemicMap'},
     children: [
       {
         name: 'epidemicMap',
@@ -26,10 +26,11 @@ const epidemicMapRoutes =
             path:'/worldMap',
             component:worldMap,
           }
-        ]
+        ],
+        
       },
 
-    ]
+    ],
   }
 
 export default epidemicMapRoutes;
